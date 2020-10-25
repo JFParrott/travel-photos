@@ -1,4 +1,7 @@
-exports.locationsRouter = require('express').Router();
-const getLocations = require('../controllers/locations.controller');
+const locationsRouter = require('express').Router();
+const { getLocations } = require('../controllers/locations.controller');
+const { handle405Error } = require('../errors');
 
-locationsRouter.use('/', getLocations);
+locationsRouter.route('/').get(getLocations).all(handle405Error);
+
+module.exports = locationsRouter;
