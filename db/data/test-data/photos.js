@@ -15,6 +15,36 @@ module.exports = [
     label: 'Venus',
   },
   {
+    location: 'Venus',
+    'url-tag': 'Venus_test_2.jpg',
+    label: 'Venus 2',
+  },
+  {
+    location: 'Venus',
+    'url-tag': 'Venus_test_3.jpg',
+    label: 'Venus 2',
+  },
+  {
+    location: 'Venus',
+    'url-tag': 'Venus_test_4.jpg',
+    label: 'Venus 2',
+  },
+  {
+    location: 'Venus',
+    'url-tag': 'Venus_test_5.jpg',
+    label: 'Venus 2',
+  },
+  {
+    location: 'Venus',
+    'url-tag': 'Venus_test_6.jpg',
+    label: 'Venus 2',
+  },
+  {
+    location: 'Venus',
+    'url-tag': 'Venus_test_7.jpg',
+    label: 'Venus 2',
+  },
+  {
     location: 'Jupiter',
     'url-tag': 'Jupiter_test_1.jpg',
     label: 'Jupiter',

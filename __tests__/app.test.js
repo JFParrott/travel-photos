@@ -13,16 +13,6 @@ afterAll(() => {
 
 describe('app', () => {
   describe('/api', () => {
-    it('status 200 and list of available endpoints and middleware', () => {
-      return request(app)
-        .get('/api')
-        .expect(200)
-        .then(({ body: { endpoints } }) => {
-          expect(Object.keys(endpoints[0])).toEqual(
-            expect.arrayContaining(['path', 'methods', 'middleware'])
-          );
-        });
-    });
     it('status 405 when invalid method', () => {
       const invalidMethods = ['delete', 'post', 'patch', 'put'];
       const methodPromises = invalidMethods.map((method) => {
@@ -34,6 +24,18 @@ describe('app', () => {
           });
       });
       return Promise.all(methodPromises);
+    });
+    describe('GET', () => {
+      it('status 200 and list of available endpoints and middleware', () => {
+        return request(app)
+          .get('/api')
+          .expect(200)
+          .then(({ body: { endpoints } }) => {
+            expect(Object.keys(endpoints[0])).toEqual(
+              expect.arrayContaining(['path', 'methods', 'middleware'])
+            );
+          });
+      });
     });
     describe('/locations', () => {
       it('status 405 when invalid method', () => {
@@ -75,12 +77,13 @@ describe('app', () => {
           return Promise.all(methodPromises);
         });
         describe('GET', () => {
-          it('status 200 and object containing array of photo objects', () => {
+          it('status 200 and object containing array of photo objects and photo count', () => {
             return request(app)
               .get('/api/photos/Mars')
               .expect(200)
-              .then(({ body: { photos } }) => {
-                expect(Object.keys(photos[0])).toEqual(
+              .then(({ body }) => {
+                expect(body.photo_count).toBeTruthy;
+                expect(Object.keys(body.photos[0])).toEqual(
                   expect.arrayContaining([
                     'photo_id',
                     'url-tag',
@@ -88,7 +91,32 @@ describe('app', () => {
                     'label',
                   ])
                 );
-                expect(photos[0].location).toBe('Mars');
+                expect(body.photos[0].location).toBe('Mars');
+              });
+          });
+          it('status 200 and object containing array which defaults to limit of 6, page 1', () => {
+            return request(app)
+              .get('/api/photos/Venus')
+              .expect(200)
+              .then(({ body: { photos, photo_count } }) => {
+                expect(photos).toHaveLength(6);
+                expect(photo_count).toBe(7);
+              });
+          });
+          it('status 200 and object containing array where items are limited by limit query', () => {
+            return request(app)
+              .get('/api/photos/Venus?limit=5')
+              .expect(200)
+              .then(({ body: { photos } }) => {
+                expect(photos).toHaveLength(5);
+              });
+          });
+          it('status 200 and object containing array where items are limited by page query', () => {
+            return request(app)
+              .get('/api/photos/Venus?p=2')
+              .expect(200)
+              .then(({ body: { photos } }) => {
+                expect(photos).toHaveLength(1);
               });
           });
           it("status 404 when location is valid but doesn't exist", () => {
