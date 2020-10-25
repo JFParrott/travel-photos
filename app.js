@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const apiRouter = require('./routes/api.router');
 const {
   invalidEndpointHandler,
@@ -8,6 +9,11 @@ const {
   handle405Error,
 } = require('./errors');
 const listEndpoints = require('express-list-endpoints');
+
+app.use(cors());
+app.get('/products/:id', function (req, res, next) {
+  res.json({ msg: 'This is CORS-enabled for all origins!' });
+});
 
 app
   .route('/api')
