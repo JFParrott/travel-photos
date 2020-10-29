@@ -11,9 +11,12 @@ const {
 const listEndpoints = require('express-list-endpoints');
 
 app.use(cors());
+
 app.get('/products/:id', function (req, res, next) {
   res.json({ msg: 'This is CORS-enabled for all origins!' });
 });
+
+//change S3 Buckets access to only allow access from front-end url
 
 app
   .route('/api')
