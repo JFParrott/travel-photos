@@ -17,6 +17,6 @@ exports.selectPhotosByLocation = (location, limit, p) => {
       return Promise.all([paginatedPhotos, allPhotos]);
     })
     .then(([paginatedPhotos, allPhotos]) => {
-      return { photos: paginatedPhotos, photo_count: allPhotos.length };
+      return { photos: paginatedPhotos[0], photo_count: allPhotos.length };
     });
 };

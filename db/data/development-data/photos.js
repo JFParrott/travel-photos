@@ -695,6 +695,26 @@ module.exports = [
     label: 'Glass building',
   },
   {
+    location: 'Jordan',
+    url_tag: '20171130_072743.jpg',
+    label: 'Petra - The Treasury',
+  },
+  {
+    location: 'Jordan',
+    url_tag: '20171130_072743.jpg',
+    label: 'Petra - The Treasury',
+  },
+  {
+    location: 'Jordan',
+    url_tag: 'DSC04198.jpg',
+    label: 'Petra - The Treasury',
+  },
+  {
+    location: 'Jordan',
+    url_tag: 'DSC04211.jpg',
+    label: 'Petra - The Treasury',
+  },
+  {
     location: 'Mexico',
     url_tag: '_CAM0212.jpg',
     label: 'Typical street',
