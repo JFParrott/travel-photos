@@ -2,7 +2,7 @@ const connection = require('../db/connection');
 const { checkLocationExists } = require('./utils.model');
 
 exports.selectPhotosByLocation = (location, limit, p) => {
-  const perPage = limit || 6;
+  const perPage = limit || 1;
   const currentPage = p || 1;
   if (currentPage < 1) currentPage = 1;
   const offsetAmount = (currentPage - 1) * perPage;
