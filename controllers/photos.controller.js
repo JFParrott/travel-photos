@@ -3,9 +3,8 @@ const { selectPhotosByLocation } = require('../models/photos.model');
 exports.getPhotosByLocation = (req, res, next) => {
   const {
     params: { location },
-    query: { limit, p },
   } = req;
-  selectPhotosByLocation(location, limit, p)
+  selectPhotosByLocation(location)
     .then((responseObject) => {
       res.send(responseObject);
     })
