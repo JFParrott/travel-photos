@@ -82,7 +82,7 @@ describe('app', () => {
               .get('/api/photos/Mars')
               .expect(200)
               .then(({ body }) => {
-                console.log(Object.keys(body.images[0]));
+                console.log(body.images[0]);
                 expect(Object.keys(body.images[0])).toEqual(
                   expect.arrayContaining([
                     'photo_id',
