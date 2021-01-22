@@ -1292,13 +1292,13 @@ module.exports = [
   {
     location: 'Nepal',
     url_tag: 'DSC03700-min.jpg',
-    resized: '191.jpg',
+    resized: '189.jpg',
     label: 'Man in mountain town',
   },
   {
     location: 'Nepal',
     url_tag: 'DSC03732-min.jpg',
-    resized: '193.jpg',
+    resized: '192.jpg',
     label: 'Celebration at Base Camp',
   },
   {
