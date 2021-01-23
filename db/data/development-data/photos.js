@@ -368,37 +368,37 @@ module.exports = [
   {
     location: 'Iceland',
     url_tag: '_CAM0642.jpg',
-    resized: '5.jpg',
+    resized: '6.jpg',
     label: 'Lodge',
   },
   {
     location: 'Iceland',
     url_tag: '_CAM0648.jpg',
-    resized: '6.jpg',
+    resized: '7.jpg',
     label: 'Icy scene',
   },
   {
     location: 'Iceland',
     url_tag: '_CAM0656.jpg',
-    resized: '7.jpg',
+    resized: '8.jpg',
     label: 'Large waterfall',
   },
   {
     location: 'Iceland',
     url_tag: '_CAM0684.jpg',
-    resized: '8.jpg',
+    resized: '9.jpg',
     label: 'Large waterfall 2',
   },
   {
     location: 'Iceland',
     url_tag: '_CAM0727.jpg',
-    resized: '9.jpg',
+    resized: '10.jpg',
     label: 'View over sea',
   },
   {
     location: 'Iceland',
     url_tag: '_CAM0754.jpg',
-    resized: '10.jpg',
+    resized: '12.jpg',
     label: 'Black sand beach',
   },
   {
@@ -410,7 +410,7 @@ module.exports = [
   {
     location: 'Iceland',
     url_tag: '_CAM0798.jpg',
-    resized: '12.jpg',
+    resized: '5.jpg',
     label: 'Interesting sky',
   },
   {
