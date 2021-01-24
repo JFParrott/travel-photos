@@ -626,13 +626,13 @@ module.exports = [
   {
     location: 'Istanbul',
     url_tag: 'DSC04295-min.jpg',
-    resized: '239.jpg',
+    resized: '229.jpg',
     label: 'Hagia Sophia',
   },
   {
     location: 'Istanbul',
     url_tag: 'DSC04374-min.jpg',
-    resized: '240.jpg',
+    resized: '230.jpg',
     label: 'Blue Mosque front',
   },
   {
